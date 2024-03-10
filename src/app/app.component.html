@@ -1,32 +1,64 @@
 <div class="app">
-    <div class="header">
-      <section class="navigation">
-        <div class="nav-container">
-          <div class="brand">
-            <a href="#!"> Swagg Guru</a>
+  <div class="header">
+    <section class="navigation">
+      <div class="nav-container">
+        <div class="brand">
+          <a href="#!"> Swagg Guru</a>
+        </div>
+        <nav>
+          <div class="nav-mobile">
+            <a id="nav-toggle" href="#!"><span></span></a>
           </div>
-          <nav>
-            <div class="nav-mobile">
-              <a id="nav-toggle" href="#!"><span></span></a>
-            </div>
-            <ul class="nav-list">
-              <li><a href="#!" (click)="GetName()">Home</a></li>
-              <li><a href="#!"(click)="GetName()">Clothes</a></li>
-              <li><a href="#!"(click)="GetName()">Juwels</a></li>
-            </ul>
-          </nav>
-        </div>
-      </section>
-    </div>
-    <div class="sections">
-      <div class="card" style="width: 10rem;">
-        <img class="card-img-top" src="./images/download.jpeg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Name of Category
-          </h5>
-        </div>
-    
+          <ul class="nav-list">
+            <li><a href="#!" (click)="GetName()">Home</a></li>
+            <li><a href="#!" (click)="GetName()">Clothes</a></li>
+            <li><a href="#!" (click)="GetName()">Juwels</a></li>
+          </ul>
+        </nav>
       </div>
+    </section>
+  </div>
+</div>
+
+<div class="sections">
+  <h1>Categories
+</h1>
+  <div class="data_conitaner">
+
+      <div class="product-card">
+        <div class="card-body" *ngFor="let cat of categories">
+          <br>
+        <br>
+        <br>
+        <img class="product-info" [src]="cat.image" alt="Cat Image" [width]="200" [height]="200">
+        <br>
+        <br>
+        <br>
+        <span class="product-info">Titttle: {{cat.title}}</span>
+        <br>
+        <br>
+        <br>
+        <br>
+        <span class="product-info">Description: {{cat.description}}</span>
+        <br>
+        <br>
+        <br>        <span class="product-info">Category: {{cat.category}}</span>
+        <br>
+        <br>
+        <br>
+        <span class="product-info"><b>>Price : R{{cat.price}}</b></span>
+        <br>
+        <br>
+        <br>        <span class="checkout"><b>Cart</b></span>
+
+      </div>
+        <!-- <img class="info" [src]="cat.image" alt="Cat Image" [width]="200" [height]="200">
+        <h5 class="info">Titttle: {{cat.title}}</h5>
+        <h5 class="info">Price : R{{cat.price}}</h5>
+        <h5 class="info"> Description: {{cat.description}}</h5>
+        <h5 class="info">Category: {{cat.category}}</h5> -->
+      </div>
+
     </div>
   </div>
 <!-- 
