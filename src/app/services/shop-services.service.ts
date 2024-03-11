@@ -8,14 +8,20 @@ import { Observable } from 'rxjs';
 
 })
 export class ShopServices {
+  getCat() {
+    throw new Error('Method not implemented.');
+  }
+
   get<T>(arg0: string) {
     throw new Error('Method not implemented.');
   }
-  private apiUrl ='https://fakestoreapi.com/products?limit=5'
+  private apiUrl ='https://fakestoreapi.com/products?limit=4'
   constructor(private _http: HttpClient ) { }
 
   getAllcategories(): Observable<any> {
 
     return this._http.get(`${this.apiUrl}`);
   }
+
+
 }

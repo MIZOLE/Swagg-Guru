@@ -1,11 +1,11 @@
 //funcion for name adding
-export class AddName {
-    static readonly type = '[Core] Add Name';
+export class trackNav {
+    static readonly type = '[Core] Track nav';
     constructor(public name: string) {}
 }
 //funcion for getting name 
-export class GetName {
-    static readonly type = '[Core] Get Name';
+export class getNav {
+    static readonly type = '[Core] Get nav';
     constructor() {}
 }
 

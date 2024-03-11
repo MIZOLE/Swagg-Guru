@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxsModule, Store } from '@ngxs/store';
-import { AddName, GetName } from './store/core/core.actions';
+import { trackNav, getNav } from './store/core/core.actions';
 import { CoreState } from './store/core/core.state';
 import { ShopServices } from './services/shop-services.service';//this is my servce
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { categoriesService } from './services/categories.service';
 
 @Component({
   selector: 'app-root',
@@ -16,34 +17,55 @@ import { CommonModule } from '@angular/common';
     CommonModule
   ]
 })
+
 export class AppComponent implements OnInit {
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
 
   store: any;
   categories: any;
+  cate: any;
 
-  constructor(private  _http: ShopServices, ) {}
+  constructor(private _http: ShopServices, private _catservice: categoriesService) { }
+
   ngOnInit(): void {
     this.getAllCategories();
+    this.getStock();
   }
 
-  getAllCategories(){
-    this._http.getAllcategories().subscribe({next: (res) => {
-      this.categories = res;
-      console.log(this.categories)
-    }, error(error){
-      console.log(error)
-    }})
-  }  
+  getAllCategories() {
+    this._http.getAllcategories().subscribe({
+      next: (res) => {
+        this.categories = res;
 
-  // Trigger the reducer from cor
-  public AddName(event:Event) {
-    console.log("event: ",event)
-    const name = (event.target as HTMLInputElement).value;
-    this.store.dispatch(new AddName(name));
+        console.log(this.categories)
+      }, error(error) {
+        console.log(error)
+      }
+    })
   }
 
-  // Trigger the reducer from cor
-  GetName() {
-    this.store.dispatch(new GetName());
+  getStock() {
+    this._catservice.getStock().subscribe({
+      next: (response: any) => {
+        this.cate = response;
+
+        console.log(this.cate)
+      }, error(error: any) {
+        console.log(error)
+      }
+    })
+  }
+
+
+  public addNav(event: Event) {
+    console.log("event: ", event)
+    const action_value = (event.target as HTMLInputElement).value;
+    this.store.dispatch(new trackNav(action_value));
+  }
+
+  GetNav() {
+    this.store.dispatch(new getNav());
   }
 }

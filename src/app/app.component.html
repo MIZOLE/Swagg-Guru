@@ -10,9 +10,9 @@
             <a id="nav-toggle" href="#!"><span></span></a>
           </div>
           <ul class="nav-list">
-            <li><a href="#!" (click)="GetName()">Home</a></li>
-            <li><a href="#!" (click)="GetName()">Clothes</a></li>
-            <li><a href="#!" (click)="GetName()">Juwels</a></li>
+            <li><a href="#!" (click)="GetNav()">Home</a></li>
+            <li><a href="#!" (click)="GetNav()">Clothes</a></li>
+            <li><a href="#!" (click)="GetNav()">Juwels</a></li>
           </ul>
         </nav>
       </div>
@@ -20,47 +20,54 @@
   </div>
 </div>
 
+<!-- //Here I want to show available categories -->
+
+
+<!-- <div class="cat_container" >
+  <div class="al_cats" *ngFor="let categ of cate">
+    <div class="details">
+      <div class="cat">{{cate}}</div>
+
+    </div>
+  </div>
+</div> -->
+  
 <div class="sections">
-  <h1>Categories
-</h1>
+  
   <div class="data_conitaner">
-
+  
+    <div class="show">
+  <br><br><br>
+      <h1>March Selected  Speacials </h1>
       <div class="product-card">
+       
+  
         <div class="card-body" *ngFor="let cat of categories">
+         
+          <img class="product-info" [src]="cat.image" alt="Cat Image" [width]="200" [height]="200">
+          <br> <span class="checkout"><b>Cart</b></span>
           <br>
-        <br>
-        <br>
-        <img class="product-info" [src]="cat.image" alt="Cat Image" [width]="200" [height]="200">
-        <br>
-        <br>
-        <br>
-        <span class="product-info">Titttle: {{cat.title}}</span>
-        <br>
-        <br>
-        <br>
-        <br>
-        <span class="product-info">Description: {{cat.description}}</span>
-        <br>
-        <br>
-        <br>        <span class="product-info">Category: {{cat.category}}</span>
-        <br>
-        <br>
-        <br>
-        <span class="product-info"><b>>Price : R{{cat.price}}</b></span>
-        <br>
-        <br>
-        <br>        <span class="checkout"><b>Cart</b></span>
+          <br>
 
-      </div>
+          <span class="product-info"><b>>R{{cat.price}}</b></span>
+        
+
+          <br><br><br>
+          <span class="product-info">Titttle: {{cat.title}}</span>
+
+        </div>
+
+
+     
         <!-- <img class="info" [src]="cat.image" alt="Cat Image" [width]="200" [height]="200">
         <h5 class="info">Titttle: {{cat.title}}</h5>
         <h5 class="info">Price : R{{cat.price}}</h5>
         <h5 class="info"> Description: {{cat.description}}</h5>
         <h5 class="info">Category: {{cat.category}}</h5> -->
       </div>
-
     </div>
   </div>
+</div>
 <!-- 
 <input value (input)="AddName($event)" type="text">
 <button (click)="GetName()">get name</button> -->

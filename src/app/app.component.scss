@@ -12,7 +12,7 @@
       height: 70px;
 }
 .sections{
-    background-color: whitesmoke;
+    background-color: white;
     width:100%;
     top: 0px; 
 }
@@ -24,7 +24,7 @@
 $content-width: 1000px;
 $breakpoint: 799px;
 $nav-height: 70px;
-$nav-background: #fff;
+$nav-background: #ddd;
 $nav-font-color: #0c0c0c;
 $link-hover-color: #f8b500;
 
@@ -36,10 +36,8 @@ body{
 .navigation {
   height: $nav-height;
   background: $nav-background;
+  padding-top: -5em;
 }
-
-
-
 
 .nav-container {
   max-width: $content-width;
@@ -110,16 +108,8 @@ nav {
   }
 }
 
-
-.nav-dropdown {
-  display: none;
-  position: absolute;
-  z-index: 1;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
-}
-
 .nav-mobile {
-  display: none;
+  display:contents;
   position: absolute;
   top: 0;
   right: 0;
@@ -132,25 +122,20 @@ nav {
   display: flex;
   gap: 0.5rem;
   padding: 0.5rem;
-  border: 1px solid green;
   justify-content: space-evenly;
 }
 
 .product-card {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   width: 200px;
-  padding: 0 0.4rem;
-  row-gap: 0.5rem;
-  border: 1px solid black;
+  gap: 40%;
+  padding-right: 2em;
+  padding-left: 2em;
+  padding-bottom: 10em;
 }
 
-.product-card > img {
-  object-fit: cover;
-  width: 100%;
-  height: 200px;
-}
 .checkout {
   background-color: #04AA6D; /* Green */
   border: none;
@@ -159,11 +144,18 @@ nav {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;}
+  font-size: 16px;
+}
 
 .product-info {
   /* Use this for growing an element to 100% width or height inside of a flex container */
   flex-grow: 30
+}
+  display: flex;
+
+
+.details{
+  padding-bottom: 10 em;
 }
 
 //Nav for the mobile device
@@ -198,5 +190,4 @@ nav {
     position: static;
   }
 }
-
 }
