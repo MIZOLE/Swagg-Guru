@@ -12,9 +12,9 @@
             <a id="nav-toggle" href="#!"><span></span></a>
           </div>
           <ul class="nav-list">
-            <li><a href="sections1">Home</a></li>
+            <li><a [routerLink]="['']"> Home</a></li>
             <li><a href="sections2">Mans</a></li>
-            <li><a href="sections3">Juwelary</a></li>
+            <li><a [routerLink]="['juwelary']">Juwelary</a></li>
             <li><a href="section_4">Login</a></li>
           </ul>
         </nav>
@@ -48,7 +48,7 @@
 
 <div class="sections1">
   <div class="page_heading1">
-    <h2>Swagg Categeories</h2>
+    <h2>Swagg Categories</h2>
   </div>
   
   <div class="first_section" *ngFor="let cate of cate">
@@ -82,7 +82,8 @@
     </div>
   </div>
   
+  
 </div>
-<!-- 
-<input value (input)="AddName($event)" type="text">
-<button (click)="GetName()">get name</button> -->
+
+
+

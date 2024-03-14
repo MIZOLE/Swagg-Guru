@@ -9,15 +9,15 @@ providedIn: 'root'
 
 export class juwelary {
   
-  getClothes() {
-    throw new Error('Method not implemented');
-  }
+  get<T>(arg0: string) {
+    throw new Error('Method not implemented at clothes service.');
+}
 
   private juwelary = 'https://fakestoreapi.com/products/category/juwelary'
 
   constructor(private _HTTP: HttpClient) {}
 
-  getMansClothes(): Observable<any> {
+  getJuwelary(): Observable<any> {
     return this._HTTP.get(`${this.juwelary}`);
   }
 }

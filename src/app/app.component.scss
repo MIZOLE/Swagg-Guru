@@ -19,7 +19,7 @@
 
   $content-width: 1000px;
   $breakpoint: 45px;
-  $nav-height: 45px;
+  $nav-height: 55px;
   $nav-background: #ddd;
   $nav-font-color: #0c0c0c;
   $link-hover-color: #f8b500;
@@ -307,6 +307,11 @@
     padding: 0 1em;
     /* this scroll will keep both areas always visible */
     overflow: auto;
+
+    // width: 50%;
+    padding-left: 15em;
+    padding-right: 15em;
+    margin-bottom: 4em;
   }
 
   .checkout {

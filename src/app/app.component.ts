@@ -6,7 +6,7 @@ import { ShopServices } from './services/shop-services.service';//this is my ser
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { categoriesService } from './services/categories.service';
-
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -14,7 +14,8 @@ import { categoriesService } from './services/categories.service';
   styleUrl: './app.component.scss',
   imports: [
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    RouterModule  
   ]
 })
 
