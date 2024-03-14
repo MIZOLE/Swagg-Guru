@@ -15,13 +15,11 @@ export class ShopServices {
   get<T>(arg0: string) {
     throw new Error('Method not implemented.');
   }
-  private apiUrl ='https://fakestoreapi.com/products?limit=4'
+  private apiUrl ='https://fakestoreapi.com/products?limit=9'
   constructor(private _http: HttpClient ) { }
 
   getAllcategories(): Observable<any> {
 
     return this._http.get(`${this.apiUrl}`);
   }
-
-
 }

@@ -36,11 +36,11 @@ export class AppComponent implements OnInit {
 
   getAllCategories() {
     this._http.getAllcategories().subscribe({
-      next: (res) => {
+      next: (res: any) => {
         this.categories = res;
 
         console.log(this.categories)
-      }, error(error) {
+      }, error(error: any) {
         console.log(error)
       }
     })
@@ -57,8 +57,7 @@ export class AppComponent implements OnInit {
       }
     })
   }
-
-
+  
   public addNav(event: Event) {
     console.log("event: ", event)
     const action_value = (event.target as HTMLInputElement).value;
