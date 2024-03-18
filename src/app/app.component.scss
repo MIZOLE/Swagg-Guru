@@ -6,11 +6,13 @@
 
   .header {
     position: fixed;
+    margin-top: 1rem;
+    font-size: larger;
     top: 0px;
     right: 0px;
     left: 0px;
     background-color: #ddd;
-    height: 70px;
+    height: 100px;
   }
 
   .data {
