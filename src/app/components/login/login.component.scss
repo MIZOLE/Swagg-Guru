@@ -1,0 +1,408 @@
+:host {
+
+    @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+  
+    .app {
+      height: 10vh;
+    }
+  
+    .header {
+      position: fixed;
+      font-size: larger;
+      top: 0px;
+      right: 0px;
+      left: 0px;
+      background-color: #ddd;
+      height: 90px;
+    }
+  
+    .data {
+      display: flex;
+    }
+  
+    $content-width: 1000px;
+    $breakpoint: 45px;
+    $nav-height: 55px;
+    $nav-background: #ddd;
+    $nav-font-color: #0c0c0c;
+    $link-hover-color: #f8b500;
+  
+  
+    body {
+      font-family: 'Poppins'
+    }
+  
+    .navigation {
+      height: $nav-height;
+      background: $nav-background;
+      padding-top: -5em;
+    }
+  
+    .nav-container {
+      max-width: $content-width;
+      margin: 0 auto;
+    }
+  
+    .brand {
+      position: absolute;
+      padding-left: 20px;
+      float: left;
+      line-height: $nav-height;
+      text-transform: uppercase;
+      font-size: 1.4em;
+  
+  
+  
+      a,
+      a:visited {
+        color: $nav-font-color;
+        text-decoration: none;
+      }
+    }
+  
+    nav {
+      float: right;
+  
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+  
+        li {
+          float: left;
+          position: relative;
+  
+          a {
+            display: block;
+            padding: 10px 20px 0 20px;
+            line-height: 50px;
+            background: $nav-background;
+            color: $nav-font-color;
+            text-decoration: none;
+  
+  
+            &::before {
+              transition: 300ms;
+              height: 5px;
+              content: "";
+              position: absolute;
+              background-color: $link-hover-color;
+              width: 0%;
+              bottom: 0px;
+            }
+  
+            &:hover::before {
+              width: 70%;
+            }
+  
+            &:not(:only-child):after {
+              padding-left: 4px;
+              content: ' ▾';
+            }
+          }
+  
+          // Dropdown list
+          ul li {
+            min-width: 190px;
+  
+            a {
+              padding: 15px;
+              line-height: 20px;
+            }
+          }
+        }
+      }
+    }
+  
+  
+    .content {
+      display: flex;
+      height: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 15px;
+      $content-width: 50%;
+    }
+  
+    .search_bar {
+      font-size: 20px;
+      margin-left: 20rem;
+      margin-top: 2rem;
+  
+      --background: #ffffff;
+    --text-color: #414856;
+    --primary-color: #716996;
+    --border-radius: 10px;
+    --width: 210px;    
+    --height: 55px;      
+    background: var(--background);
+    width: auto;
+    height: var(--height);
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(#5b5f68, .05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    input[type="text"] {
+      position: relative;
+      width: var(--height);
+      height: var(--height);
+      font: 400 16px 'Varela Round', sans-serif;
+      color: var(--text-color);
+      border: 0;
+      box-sizing: border-box;
+      outline: none;
+      padding: 0 0 0 40px;
+      transition: width .6s ease;
+      z-index: 10;
+      opacity: 0;
+      cursor: pointer;
+      &:focus {
+        z-index: 0;
+        opacity: 1;
+        width: var(--width);
+        ~ .symbol {
+          &::before {
+            width: 0%;
+          }
+          &:after {
+            clip-path: inset(0% 0% 0% 100%);
+            transition: clip-path .04s linear .105s;
+          }
+          .cloud {
+            top: -30px;
+            left: -30px;
+            transform: translate(0, 0);
+            transition: all .6s ease;
+          }
+          .lens {
+            top: 20px;
+            left: 15px;
+            transform: translate(0, 0);
+            fill: var(--primary-color);
+            transition: top .5s ease .1s, left .5s ease .1s, fill .3s ease;
+          }
+        }
+      }
+    }
+    .symbol {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:before {
+        content:"";
+        position: absolute;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--primary-color);
+        z-index: -1;
+        transition: width .6s ease;
+      }
+      &:after {
+        content:"";
+        position: absolute;
+        top: 21px;
+        left: 21px;
+        width: 50px;
+        height: 20px;
+        border-radius: 50%;
+        background: var(--primary-color);
+        z-index: 1;
+        clip-path: inset(0% 0% 0% 0%);
+        transition: clip-path .04s linear .225s;
+      }
+      .cloud,
+      .lens {
+        position: absolute;
+        fill: #fff;
+        stroke: none;
+        top: 50%;
+        left: 50%;
+      }
+      .cloud {
+        width: 35px;
+        height: 32px;
+        transform: translate(-50%, -60%);
+        transition: all .6s ease;
+      }
+      .lens {
+        fill: #fff;
+        width: 16px;
+        height: 16px;
+        z-index: 2;
+        top: 24px;
+        left: 24px;
+        transition: top .3s ease, left .3s ease, fill .2s ease .2s;
+      }
+    }
+  
+  
+  
+    }
+  
+    .log_search {
+      display: flex;
+    }
+  
+    .sections1 {
+      margin-bottom: 12em;
+    }
+  
+    .first_section {
+      justify-content: center;
+      display: flex;
+      font-size: xx-large;
+      color: rgb(95, 108, 104);
+      break-after: auto;
+      transition: width 9s;
+    }
+  
+    .juwelary:hover {
+      width: 500px;
+    }
+  
+    .page_heading1 {
+      justify-content: center;
+      font-family: verdana;
+      font-size: 20px;
+      text-align: center;
+    }
+  
+    .page_heading2 {
+      color: red;
+      justify-content: center;
+      font-family: verdana;
+      font-size: 20px;
+      text-align: center;
+      animation: blink 1s steps(1, end) infinite;
+      @keyframes blink {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    }
+  
+    .content {
+      box-sizing: border-box;
+      padding: 0 1em;
+      /* this scroll will keep both areas always visible */
+      overflow: auto;
+  
+      // width: 50%;
+      padding-left: 15em;
+      padding-right: 15em;
+      margin-bottom: 4em;
+    }
+  
+    .checkout {
+      background-color: #04AA6D;
+      /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-bottom: 3em;
+    }
+  
+    .price {
+      margin-bottom: 3em;
+  
+    }
+  
+  
+  
+    .product-info {
+      /* Use this for growing an element to 100% width or height inside of a flex container */
+      flex-grow: 30
+    }
+  
+  
+    .details {
+      padding-bottom: 10em;
+    }
+  
+    /* Existing CSS code */
+  
+  /* Media Queries */
+  @media screen and (max-width: 768px) {
+    .navigation {
+      float: none;
+      text-align: center;
+    }
+  
+    .nav-container {
+      display: block;
+      margin: 0 auto;
+    }
+  
+    nav ul li {
+      float: none;
+      display: inline-block;
+    }
+  
+    .content {
+      flex-direction: column;
+      padding: 0 1em;
+    }
+  
+    .search_bar {
+      margin-left: 0;
+      margin-top: 2rem;
+    }
+  
+    .checkout {
+      margin-bottom: 2em;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .nav-mobile {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: $nav-background; /* Use the variables defined earlier */
+      height: $nav-height;
+      width: $nav-height;
+    }
+  }
+
+  .form_div {
+    width: 500px; 
+    margin: 0 auto;
+    font-size: xx-large; 
+}
+
+.login {
+    width: 300px; 
+    margin: 0 auto; 
+}
+
+.btn {
+    margin: 0 auto; 
+    width: 300px; 
+    margin-left: 4em;
+    margin-right: 4em;
+
+}
+  
+  }
+  
+  
