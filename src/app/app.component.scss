@@ -6,13 +6,12 @@
 
   .header {
     position: fixed;
-    margin-top: 1rem;
     font-size: larger;
     top: 0px;
     right: 0px;
     left: 0px;
     background-color: #ddd;
-    height: 100px;
+    height: 90px;
   }
 
   .data {
@@ -113,15 +112,6 @@
     }
   }
 
-  .nav-mobile {
-    display: contents;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: $nav-background;
-    height: $nav-height;
-    width: $nav-height;
-  }
 
   .content {
     display: flex;
@@ -345,6 +335,52 @@
   .details {
     padding-bottom: 10em;
   }
+
+  /* Existing CSS code */
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .navigation {
+    float: none;
+    text-align: center;
+  }
+
+  .nav-container {
+    display: block;
+    margin: 0 auto;
+  }
+
+  nav ul li {
+    float: none;
+    display: inline-block;
+  }
+
+  .content {
+    flex-direction: column;
+    padding: 0 1em;
+  }
+
+  .search_bar {
+    margin-left: 0;
+    margin-top: 2rem;
+  }
+
+  .checkout {
+    margin-bottom: 2em;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .nav-mobile {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: $nav-background; /* Use the variables defined earlier */
+    height: $nav-height;
+    width: $nav-height;
+  }
+}
 
 }
 

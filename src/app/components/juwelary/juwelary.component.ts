@@ -1,44 +1,38 @@
 import { Component, OnInit } from '@angular/core';
-import { juwelary } from '../../services/juwelary.service';
-import { HttpClientModule } from '@angular/common/http';
+import { JuwelaryService } from '../../services/juwelary.service';
 import { CommonModule } from '@angular/common';
-import {RouterModule} from '@angular/router';
- 
+import { RouterModule } from '@angular/router';
+
+
 @Component({
-  selector: 'app-juwelary',
   standalone: true,
+  selector: 'app-juwelary',
   templateUrl: './juwelary.component.html',
-  styleUrl: './juwelary.component.scss',
+   
   imports: [
-    HttpClientModule,
-    CommonModule,
-    RouterModule
+  RouterModule,
+  CommonModule,
   ]
+
 })
-export class JuwelaryComponent {
-title(title: any){
-  throw new Error('Methid cannot be implemented.')
-}
+export class JuwelaryComponent implements OnInit {
+  juw: any;
 
-store: any;
-juw: any;
+  constructor(private _juwelaryService: JuwelaryService) {}
 
-constructor(private _HTTP: juwelary) {}
-
-ngOnit(): void {
-  this.getJuwelary();
-}
-
-  getJuwelary() {
-    this._HTTP.getJuwelary().subscribe({
-      next: (res: any) => {
-        this.juw = res;
-
-        console.log(this.juw)
-      }, error(error: any) {
-        console.log(error)
-      }
-    })
+  ngOnInit(): void {
+    this.getJuwelary();
   }
 
+  getJuwelary(): void {
+    this._juwelaryService.getJuwelary().subscribe({
+      next: (res: any) => {
+        this.juw = res;
+        console.log(this.juw);
+      },
+      error: (error: any) => {
+        console.log(error);
+      }
+    });
+  }
 }

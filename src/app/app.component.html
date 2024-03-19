@@ -1,28 +1,24 @@
-
 <div class="app">
-
   <div class="header">
-    
     <section class="navigation">
-      
       <div class="nav-container">
-     
         <nav>
           <div class="nav-mobile">
             <a id="nav-toggle" href="#!"><span></span></a>
           </div>
           <ul class="nav-list">
-            <li><a [routerLink]="['']"> Home</a></li>
-            <li><a href="sections2">Mans</a></li>
-            <li><a [routerLink]="['juwelary']">Juwelary</a></li>
-            <li><a href="section_4">Login</a></li>
+            <li><a [routerLink]="['view']">Home</a></li>
+            <li><a [routerLink]="['jewelary']">Jewelary</a></li>
+            <li><a [routerLink]="['login']">Login</a></li>
           </ul>
         </nav>
       </div>
 
       <div class="log_search">
         <div class="brand">
-          <a href="#!"> <h1>Swagg Guru</h1> </a>
+          <a href="#!">
+            <h1>Swagg Guru</h1>
+          </a>
         </div>
 
         <div class="search_bar">
@@ -36,54 +32,9 @@
             </svg>
           </div>
         </div>
-  
-        <!-- <div class="search_bar">
-          <label for="searchbar">Search Item:</label>
-          <input type="search" name="searchbar" id="search_bar">
-        </div> -->
       </div>
     </section>
   </div>
 </div>
 
-<div class="sections1">
-  <div class="page_heading1">
-    <h2>Swagg Categories</h2>
-  </div>
-  
-  <div class="first_section" *ngFor="let cate of cate">
-    <p class="juwelary">{{cate}}</p>
-  </div>
-  
-</div>
-
-<div class="section_2">
-  <div class="page_heading2">
-    <h2>Selected  Specials </h2>  
-  </div>
-  <div class="sections">
-  
-      <div class="show">
-        <div class="content">
-          <div class="card-body" *ngFor="let cat of categories">
-           
-            <img class="product-info" [src]="cat.image" alt="Cat Image" [width]="200" [height]="200">
-            <span class="checkout"><b>Cart</b></span>
-         
-    
-            <span class="price"><b>>R{{cat.price}}</b></span>
-          
-    
-            <br><br><br>
-            <span class="product-info">Titttle: {{cat.title}}</span>
-        </div>
-        </div>
-        
-    </div>
-  </div>
-  
-  
-</div>
-
-
-
+<router-outlet></router-outlet>

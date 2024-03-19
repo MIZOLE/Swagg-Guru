@@ -1,5 +1,27 @@
-<div class="bling" *ngFor="let jw of juw">
-    {{jw}}
+<div class="section_2">
+  <div class="page_heading1">
+    <h2>Swagg Categories</h2>
+  </div>
 
-    fkjdflkasjf
+
+  <div class="sections">
+    <div class="show">
+      <div class="content">
+        <div class="card-body" *ngFor="let item of juw">
+          <p class="juwelary">{{ item.name }}</p>
+      
+          <img class="product-info" [src]="item.image" alt="item Image" [width]="200" [height]="200">
+          <span class="checkout"><b>Cart</b></span>
+      
+      
+          <span class="price"><b>>R{{item.price}}</b></span>
+      
+      
+          <br><br><br>
+          <span class="product-info">Tittle: {{item.title}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>

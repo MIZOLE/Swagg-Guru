@@ -9,10 +9,6 @@ import { Observable } from 'rxjs';
 })
 export class ShopServices {
 
-  get<T>(arg0: string) {
-    throw new Error('Method not implemented.');
-  }
-  
   private apiUrl = 'https://fakestoreapi.com/products?limit=9'
   constructor(private _http: HttpClient) { }
 

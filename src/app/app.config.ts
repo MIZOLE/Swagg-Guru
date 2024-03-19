@@ -4,7 +4,6 @@ import { CoreState } from './store/core/core.state';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
 
 export const appConfig: ApplicationConfig = {
   providers: [

@@ -20,32 +20,27 @@ import { RouterModule } from '@angular/router';
 })
 
 export class AppComponent implements OnInit {
-  title(title: any) {
-    throw new Error('Method not implemented.');
-  }
 
   store: any;
-  categories: any;
   cate: any;
 
-  constructor(private _http: ShopServices, private _catservice: categoriesService) { }
+  constructor(private _catservice: categoriesService) { }
 
   ngOnInit(): void {
-    this.getAllCategories();
     this.getStock();
   }
 
-  getAllCategories() {
-    this._http.getAllcategories().subscribe({
-      next: (res: any) => {
-        this.categories = res;
+  // getAllCategories() {
+  //   this._http.getAllcategories().subscribe({
+  //     next: (res: any) => {
+  //       this.categories = res;
 
-        console.log(this.categories)
-      }, error(error: any) {
-        console.log(error)
-      }
-    })
-  }
+  //       console.log(this.categories)
+  //     }, error(error: any) {
+  //       console.log(error)
+  //     }
+  //   })
+  // }
 
   getStock() {
     this._catservice.getStock().subscribe({

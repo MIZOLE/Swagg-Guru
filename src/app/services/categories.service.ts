@@ -9,10 +9,6 @@ import { Observable } from 'rxjs';
 
 export class categoriesService {
 
-    get<T>(arg0: string) {
-        throw new Error('Method not implemented at clothes service.');
-    }
-
     private apiClotheUrl = 'https://fakestoreapi.com/products/categories'
     constructor(private _catservice: HttpClient) { }
 
